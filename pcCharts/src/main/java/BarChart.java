@@ -32,9 +32,9 @@ public class BarChart extends XYChart  {
 //        yAxes.setAutoRangePadding(0.2);
 //        yAxes.setAutoRanging(false); // don't automatically change the range if points exceed the min/max values
 //        xAxes.setAutoRanging(false);
-//        getPlugins().add(new ParameterMeasurements());
+        getPlugins().add(new ParameterMeasurements());
 //        getPlugins().add(new Panner());
-//        getPlugins().add(new Zoomer());
+        getPlugins().add(new Zoomer());
 //        getPlugins().add(new TableViewer());
         setHorizontalGridLinesVisible(false);
         setVerticalGridLinesVisible(false);
@@ -52,26 +52,21 @@ public class BarChart extends XYChart  {
 
 
         final DefaultErrorDataSet dataSet_Default = new DefaultErrorDataSet("dataSet_Default");
-        final DefaultErrorDataSet dataSet_Normalised = new DefaultErrorDataSet("dataSet_Normalised");
-        final DefaultErrorDataSet dataSet_Valid = new DefaultErrorDataSet("dataSet_Valid");
+
         dataSet_Default.setStyle("-fx-stroke: rgb(0, 0, 0)");
-        dataSet_Normalised.setStyle("-fx-stroke: rgb(3, 103, 219)");
-        dataSet_Valid.setStyle("-fx-stroke: grey");
+
+        dataSet_Default.add(0,1.0);
+        dataSet_Default.add(1,0.9987796488769619);
+        dataSet_Default.add(2,0.9993033990466621);
+        dataSet_Default.add(3,1.9813327833230492);
+        dataSet_Default.add(4,1.981987414811995);
 
 
-        for (int i = 0; i < 200; i++) {
-            if(i/5 == 0){
-                dataSet_Default.add(i, i*2);
-            }else if (i/10==0){
-                dataSet_Normalised.add(i, i*2);
-            }else {
-                dataSet_Valid.add(i, i*2);
-            }
-        }
 
         dataSet_Default.add(21, 0);
-        errorRenderer2.getDatasets().addAll(dataSet_Default, dataSet_Normalised, dataSet_Valid);
+        errorRenderer2.getDatasets().addAll(dataSet_Default);
         errorRenderer2.setPolyLineStyle(LineStyle.NONE);
+        errorRenderer2.setErrorType(ErrorStyle.NONE);
         errorRenderer2.setBarWidth(20);
 
         errorRenderer2.setAllowNaNs(false);
