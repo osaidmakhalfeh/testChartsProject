@@ -55,11 +55,12 @@ public class BarChart extends XYChart  {
 
         dataSet_Default.setStyle("-fx-stroke: rgb(0, 0, 0)");
 
-        dataSet_Default.add(0,0.9987796888769619);
-        dataSet_Default.add(1,0.9987796488769619);
-        dataSet_Default.add(2,0.9993033990466621);
-        dataSet_Default.add(3,1.9813327833230492);
-        dataSet_Default.add(4,1.981987414811995);
+//        dataSet_Default.add(0,0.9987796888769619);
+
+        dataSet_Default.add(12.4,1.001650853992342);
+        dataSet_Default.add(12.4,1.0000024010700712);
+        dataSet_Default.add(12.3,0.9977828294515343);
+        dataSet_Default.add(12.2,0.9974950907069192);
 
 
 
