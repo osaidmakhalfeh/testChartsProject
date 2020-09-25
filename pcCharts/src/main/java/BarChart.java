@@ -55,7 +55,7 @@ public class BarChart extends XYChart  {
 
         dataSet_Default.setStyle("-fx-stroke: rgb(0, 0, 0)");
 
-        dataSet_Default.add(0,1.0);
+        dataSet_Default.add(0,0.9987796888769619);
         dataSet_Default.add(1,0.9987796488769619);
         dataSet_Default.add(2,0.9993033990466621);
         dataSet_Default.add(3,1.9813327833230492);
@@ -63,7 +63,7 @@ public class BarChart extends XYChart  {
 
 
 
-        dataSet_Default.add(21, 0);
+//        dataSet_Default.add(21, 0);
         errorRenderer2.getDatasets().addAll(dataSet_Default);
         errorRenderer2.setPolyLineStyle(LineStyle.NONE);
         errorRenderer2.setErrorType(ErrorStyle.NONE);
@@ -74,7 +74,7 @@ public class BarChart extends XYChart  {
         errorRenderer2.setShowInLegend(false);
 //        errorRenderer2.setPointReduction(false);
 //        errorRenderer2.setDrawChartDataSets(false);
-        setStyle("-fx-stroke: blue;");
+
 
         errorRenderer2.setDrawBars(true);
         errorRenderer2.setBarWidth(20);
@@ -90,6 +90,10 @@ public class BarChart extends XYChart  {
         errorRenderer2.setIntensityFading(0);
         errorRenderer2.setMarkerSize(0);
         errorRenderer2.setDashSize(0);
+
+        errorRenderer2.setDrawBars(true);
+        errorRenderer2.setDynamicBarWidth(false);
+        errorRenderer2.setBarWidth(5);
 
         this.getRenderers().setAll(errorRenderer2);
     }
